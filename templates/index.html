@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>This is a website where you can find restaurants that match you favor, You can also view the ratings and other people's commnets</h2>
+
+<form action="search_items" method="POST">
+  <div class="row mb-2">
+    <label for="favorInput" class="col-sm-2 col-form-label">Tell me your favor</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" name="favor" id="favorInput">
+      <div id="favor" class="font-weight-bold">Example: seafood, steak, pork, etc.</div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="locationInput" class="col-sm-2 col-form-label">Your location</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" name="location" id="locationInput">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="numInput" class="col-sm-2 col-form-label">Number of Display</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" name="numDisplay" id="numInput">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="numInput" class="col-form-label col-sm-2 pt-0">Filters</label>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="openCheck">
+        <label class="form-check-label" for="openCheck">Show opened only</label>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
+{% endblock content %}
+
+

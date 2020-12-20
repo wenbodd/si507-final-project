@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <h2>Search history</h2>
+    <hr>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Favor</th>
+            <th scope="col">Location</th>
+            <th scope="col">Number_of_Display</th>
+            <th scope="col">Create_date</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in range(0, len) %}
+            <tr>
+                <th scope="row">{{ info[i].id + 1 }}</th>
+                <td>{{ info[i].favor }}</td>
+                <td>{{ info[i].location }}</td>
+                <td>{{ info[i].numOfDisplay }}</td>
+                <td>{{ info[i].create_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+{% endblock content %}
+
+

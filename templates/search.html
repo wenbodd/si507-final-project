@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h3 class="text-center">These restaurants might be your favor!</h3>
+    {% for i in range(0, row) %}
+    <div class="row">
+        {% for j in range(0, col) %}
+        <div class="col-md-4">
+            <div class="card" style="width: 24rem;">
+                <img src={{ info[i*row+j].image_url }} class="img-thumbnail" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ info[i*row+j].name }}</h5>
+                    <span class="card-text">type: {{ info[i*row+j].alias_name }}</span> <br>
+                    <span class="card-text">rating: {{ info[i*row+j].rating }}</span> <br>
+                    <span class="card-text">phone: {{ info[i*row+j].phone }}</span> <br>
+                    <span class="card-text">address: {{ info[i*row+j].address }}</span> <br>
+                    <form action="detail" method="POST">
+                        <div class="invisible">
+                            <input type="text" class="form-control" name="yelp_id" value={{ info[i*row+j].id }} id="redirectInput">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Show more</button>
+                    </form>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+    <br>
+    <a href="/" class="btn btn-primary">Return to search page</a>
+    
+{% endblock content %}
+
+

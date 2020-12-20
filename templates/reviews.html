@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <!-- <img src={{ info.image_url }} class="img-thumbnail" alt="..."> -->
+    <h2>{{info.name}}</h2>
+    <hr>
+    {% for i in range(0, len) %}
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <h5 class="col-sm-2">{{ info.reviews[i].user_name}}</h5>
+                    <p class="col-sm-2 offset-md-4">{{ info.reviews[i].time_created}}</p>
+                </div>
+            <hr>
+            <p class="card-text">{{ info.reviews[i].text}}</p>
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+</div>
+
+{% endblock content %}
+
+
